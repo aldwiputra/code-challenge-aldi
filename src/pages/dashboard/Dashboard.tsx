@@ -21,8 +21,8 @@ export function Dashboard() {
 
   const filteredData = gpsDataWithUniqueId.filter(
     (item) =>
-      item.deviceId.toLowerCase().includes(searchString) ||
-      item.deviceType.toLowerCase().includes(searchString)
+      item.deviceId.toLowerCase().includes(searchString.trim()) ||
+      item.deviceType.toLowerCase().includes(searchString.trim())
   );
 
   const paginatedData = filteredData.slice(
