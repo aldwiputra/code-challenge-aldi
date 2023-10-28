@@ -2,7 +2,7 @@ import { HTMLAttributes } from 'react';
 import { GpsData } from '../data/gpsData';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-type PaginationPropType = HTMLAttributes<HTMLElement> & { data: GpsData[]; activePage: number };
+type PaginationPropType = HTMLAttributes<HTMLElement> & { data: GpsData[] };
 
 export const Pagination = ({ data, ...props }: PaginationPropType) => {
   const { search } = useLocation();

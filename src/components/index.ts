@@ -5,3 +5,5 @@ export * from './LoginInfo';
 export * from './ErrorToast';
 export * from './TableRow';
 export * from './Pagination';
+export * from './SortSelectInput';
+export * from './SearchInput';
