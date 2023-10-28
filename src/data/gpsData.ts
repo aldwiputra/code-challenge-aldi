@@ -36,3 +36,32 @@ export const gpsData: GpsData[] = [
   { deviceId: 'D-1575', deviceType: 'Asset', timestamp: '2022-08-31T10:10', location: 'L6' },
   { deviceId: 'D-1575', deviceType: 'Asset', timestamp: '2022-08-31T10:15', location: 'L6' },
 ];
+
+function sortString(key: keyof GpsData, transformFunc?: typeof Date.parse) {
+  return (a: GpsData, b: GpsData) => {
+    if (transformFunc) {
+      return transformFunc(a[key]) > transformFunc(b[key]) ? 1 : -1;
+    } else {
+      return a[key] > b[key] ? 1 : -1;
+    }
+  };
+}
+
+export const keysData = {
+  deviceId: {
+    name: 'Device Id',
+    sorterFunc: sortString('deviceId'),
+  },
+  deviceType: {
+    name: 'Device Type',
+    sorterFunc: sortString('deviceType'),
+  },
+  timestamp: {
+    name: 'Timestamp',
+    sorterFunc: sortString('timestamp', Date.parse),
+  },
+  location: {
+    name: 'Location',
+    sorterFunc: sortString('location'),
+  },
+};

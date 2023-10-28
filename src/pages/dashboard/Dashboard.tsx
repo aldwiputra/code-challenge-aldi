@@ -1,28 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Logo, Pagination, TableRow } from '../../components';
-import { GpsData, gpsData } from '../../data/gpsData';
+import { GpsData, gpsData, keysData } from '../../data/gpsData';
 import { transformDataWithUniqueId } from '../../lib';
 import { useLocation, useNavigate } from 'react-router-dom';
-
-const keysData = {
-  deviceId: {
-    name: 'Device Id',
-    sorterFunc: (a: GpsData, b: GpsData) => (a.deviceId > b.deviceId ? 1 : -1),
-  },
-  deviceType: {
-    name: 'Device Type',
-    sorterFunc: (a: GpsData, b: GpsData) => (a.deviceType > b.deviceType ? 1 : -1),
-  },
-  timestamp: {
-    name: 'Timestamp',
-    sorterFunc: (a: GpsData, b: GpsData) =>
-      Date.parse(a.timestamp) > Date.parse(b.timestamp) ? 1 : -1,
-  },
-  location: {
-    name: 'Location',
-    sorterFunc: (a: GpsData, b: GpsData) => (a.location > b.location ? 1 : -1),
-  },
-};
 
 export function Dashboard() {
   const { search } = useLocation();
