@@ -27,5 +27,12 @@ export const gpsData: GpsData[] = [
   { deviceId: 'D-1571', deviceType: 'Aircraft', timestamp: '2022-08-31T10:20', location: 'L2' },
   { deviceId: 'D-1572', deviceType: 'Asset', timestamp: '2022-08-31T10:10', location: 'L1' },
   { deviceId: 'D-1572', deviceType: 'Asset', timestamp: '2022-08-31T10:15', location: 'L1' },
-  { deviceId: 'D-1572', deviceType: 'Asset', timestamp: '2022-08-31T10:20', location: 'L1' },
+  { deviceId: 'D-1572', deviceType: 'Asset', timestamp: '2022-08-31T10:10', location: 'L1' },
+  { deviceId: 'D-1573', deviceType: 'Asset', timestamp: '2022-08-31T10:15', location: 'L4' },
+  { deviceId: 'D-1573', deviceType: 'Asset', timestamp: '2022-08-31T10:20', location: 'L5' },
+  { deviceId: 'D-1574', deviceType: 'Personal', timestamp: '2022-08-31T10:10', location: 'L6' },
+  { deviceId: 'D-1574', deviceType: 'Personal', timestamp: '2022-08-31T10:15', location: 'L6' },
+  { deviceId: 'D-1575', deviceType: 'Asset', timestamp: '2022-08-31T10:05', location: 'L6' },
+  { deviceId: 'D-1575', deviceType: 'Asset', timestamp: '2022-08-31T10:10', location: 'L6' },
+  { deviceId: 'D-1575', deviceType: 'Asset', timestamp: '2022-08-31T10:15', location: 'L6' },
 ];

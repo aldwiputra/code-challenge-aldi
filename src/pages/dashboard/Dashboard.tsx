@@ -1,15 +1,34 @@
-// import TableSkeleton from '../components/TableSkeleton';
-// import { UserType } from '../lib/type/userType';
-import { Logo, TableRow } from '../../components';
+import { useEffect, useState } from 'react';
+import { Logo, Pagination, TableRow } from '../../components';
 import { gpsData } from '../../data/gpsData';
-import { transformDataWithUniqueId } from '../../lib/transformDataWithUniqueId';
+import { transformDataWithUniqueId } from '../../lib';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export function Dashboard() {
+  const { search } = useLocation();
+  const navigate = useNavigate();
+  const [page, setPage] = useState<number>(1);
+  const totalShownEntries = 5;
+  const dataWithUniqueId = transformDataWithUniqueId(gpsData);
+  const paginatedData = dataWithUniqueId.slice(
+    totalShownEntries * (page - 1),
+    totalShownEntries * page
+  );
+
+  useEffect(() => {
+    const query = new URLSearchParams(search).get('page');
+
+    if (!query) {
+      navigate('/?page=1');
+    } else {
+      setPage(+query);
+    }
+  }, [search]);
+
   return (
     <section className='bg-gray-50 dark:bg-gray-900'>
       <div className='flex flex-col items-center px-6 py-10 mx-auto md:min-h-screen lg:py-10'>
         <Logo />
-
         <div className='w-full sm:max-w-5xl text-gray-900 dark:text-white'>
           <div className='relative overflow-x-auto shadow-md sm:rounded-lg'>
             <table className='w-full text-sm text-left text-gray-500 dark:text-gray-400'>
@@ -30,12 +49,13 @@ export function Dashboard() {
                 </tr>
               </thead>
               <tbody>
-                {transformDataWithUniqueId(gpsData).map((data, index) => (
+                {paginatedData.map((data, index) => (
                   <TableRow key={index} data={data} />
                 ))}
               </tbody>
             </table>
           </div>
+          <Pagination className='mt-8 text-center' data={dataWithUniqueId} activePage={page} />
         </div>
       </div>
     </section>

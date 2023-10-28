@@ -21,9 +21,9 @@ export function TableRow({ data }: TableRowPropsType) {
         {deviceId}
       </td>
       <td className='px-6 py-4'>{deviceType}</td>
-      <td className='px-6 py-4'>
+      <td className='px-6 py-4 text-gray-900 dark:text-slate-300'>
         {formatDate(timestamp)}{' '}
-        <span className='text-xs bg-green-600/20 py-1 px-1.5 rounded-md text-slate-200'>
+        <span className='text-xs bg-zinc-500/30 py-1 px-1.5 rounded-md text-gray-900 dark:text-slate-200'>
           {formatTime(timestamp)}
         </span>{' '}
       </td>
