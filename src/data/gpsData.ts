@@ -1,4 +1,4 @@
-type GpsData = {
+export type GpsData = {
   deviceId: string;
   deviceType: 'Aircraft' | 'Personal' | 'Asset';
   timestamp: string;
