@@ -1,13 +1,15 @@
 import { Route, Routes } from 'react-router-dom';
 import { Dashboard, Login, NotFound, Register } from './pages';
-import { ProtectedLayout } from './pages/layouts';
+import { AuthLayout, ProtectedLayout } from './pages/layouts';
 
 function App() {
   return (
     <>
       <Routes>
-        <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register />} />
+        <Route element={<AuthLayout />}>
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+        </Route>
         <Route element={<ProtectedLayout />}>
           <Route path='/' element={<Dashboard />} />
         </Route>
