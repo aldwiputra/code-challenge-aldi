@@ -1,4 +1,5 @@
 import { SetStateAction, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 type SearchInputProps = {
   setSearchString: React.Dispatch<SetStateAction<string>>;
@@ -6,6 +7,7 @@ type SearchInputProps = {
 
 export const SearchInput = ({ setSearchString }: SearchInputProps) => {
   const [search, setSearch] = useState('');
+  const navigate = useNavigate();
 
   return (
     <form
@@ -14,6 +16,7 @@ export const SearchInput = ({ setSearchString }: SearchInputProps) => {
         e.preventDefault();
 
         setSearchString(search);
+        navigate('/?page=1');
       }}>
       <label
         htmlFor='default-search'
