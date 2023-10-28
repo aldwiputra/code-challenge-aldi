@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Logo, Pagination, SearchInput, SortSelectInput, TableRow } from '../../components';
-import { GpsData, gpsData, createSortStringFunc } from '../../data/gpsData';
+import { GpsData, gpsData, createSortStringFunc, keysData } from '../../data/gpsData';
 import { transformDataWithUniqueId } from '../../lib';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -13,13 +13,13 @@ export function Dashboard() {
   const [searchString, setSearchString] = useState('');
 
   const totalShownEntries = 5;
-  const dataWithUniqueId = transformDataWithUniqueId(gpsData);
+  const gpsDataWithUniqueId = transformDataWithUniqueId(gpsData);
 
-  dataWithUniqueId.sort(
+  gpsDataWithUniqueId.sort(
     createSortStringFunc(sortBy, sortBy === 'timestamp' ? Date.parse : undefined)
   );
 
-  const filteredData = dataWithUniqueId.filter(
+  const filteredData = gpsDataWithUniqueId.filter(
     (item) =>
       item.deviceId.toLowerCase().includes(searchString) ||
       item.deviceType.toLowerCase().includes(searchString)
@@ -32,7 +32,7 @@ export function Dashboard() {
 
   useEffect(() => {
     const query = new URLSearchParams(search).get('page');
-    const totalPage = Math.ceil(dataWithUniqueId.length / 5);
+    const totalPage = Math.ceil(gpsDataWithUniqueId.length / 5);
 
     if (!query) {
       navigate('/?page=1');
@@ -56,18 +56,11 @@ export function Dashboard() {
             <table className='w-full text-sm text-left text-gray-500 dark:text-gray-400'>
               <thead className='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
                 <tr>
-                  <th scope='col' className='px-6 py-3'>
-                    Device Id
-                  </th>
-                  <th scope='col' className='px-6 py-3'>
-                    Device Type
-                  </th>
-                  <th scope='col' className='px-6 py-3'>
-                    Timestamp
-                  </th>
-                  <th scope='col' className='px-6 py-3 text-center'>
-                    Location
-                  </th>
+                  {Object.keys(gpsData[0]).map((key) => (
+                    <th scope='col' className='px-6 py-3'>
+                      {keysData[key as keyof GpsData].name}
+                    </th>
+                  ))}
                 </tr>
               </thead>
               <tbody>

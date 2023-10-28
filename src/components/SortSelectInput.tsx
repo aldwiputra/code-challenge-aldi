@@ -11,7 +11,7 @@ export const SortSelectInput = ({ sortBy, setSortBy }: SortSelectProps) => {
     <div className='flex items-center w-fit'>
       <label
         htmlFor='countries'
-        className='block mb-2 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white'>
+        className='block text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white'>
         Sort By
       </label>
       <select
