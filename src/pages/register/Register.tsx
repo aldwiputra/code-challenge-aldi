@@ -48,7 +48,6 @@ export function Register() {
       return;
     }
 
-    console.log('hello from the other siiiiiide');
     setUserOnLocalStorage(userInput);
 
     setTimeout(() => {
@@ -56,28 +55,6 @@ export function Register() {
       setJustCreatedUserLocalStorage(email);
       navigate('/login');
     }, 2000);
-    // const usersData = localStorage.setItem(USERS_KEY);
-    // const user = usersData && JSON.parse(usersData).find((user: UserType) => user.email === email);
-
-    // if (user && user.password === password) {
-    //   setTimeout(() => {
-    //     console.log('login success, daddy');
-    //     localStorage.setItem(
-    //       LOGGED_IN_USER_KEY,
-    //       JSON.stringify({
-    //         email,
-    //         password,
-    //       })
-    //     );
-    //     navigate('/');
-    //     setSubmitLoading(false);
-    //   }, 2000);
-    // } else {
-    //   setTimeout(() => {
-    //     setSubmitLoading(false);
-    //     setSubmitError(true);
-    //   }, 2000);
-    // }
   };
 
   return (

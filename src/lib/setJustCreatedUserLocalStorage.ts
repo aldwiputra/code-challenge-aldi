@@ -4,5 +4,5 @@ export const setJustCreatedUserLocalStorage = (email: string) => {
   localStorage.setItem(JUST_CREATED_USERS_KEY, email);
   setTimeout(() => {
     localStorage.removeItem(JUST_CREATED_USERS_KEY);
-  }, 5000);
+  }, 9000);
 };

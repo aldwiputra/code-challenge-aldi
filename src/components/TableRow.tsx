@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { GpsData } from '../data/gpsData';
+import { formatDate, formatTime } from '../lib';
 
 type TableRowPropsType = {
   data: GpsData;
@@ -20,7 +21,12 @@ export function TableRow({ data }: TableRowPropsType) {
         {deviceId}
       </td>
       <td className='px-6 py-4'>{deviceType}</td>
-      <td className='px-6 py-4'>{timestamp} </td>
+      <td className='px-6 py-4'>
+        {formatDate(timestamp)}{' '}
+        <span className='text-xs bg-green-600/20 py-1 px-1.5 rounded-md text-slate-200'>
+          {formatTime(timestamp)}
+        </span>{' '}
+      </td>
       <td className='px-6 py-4 text-center text-gray-900 dark:text-white'>{location}</td>
     </tr>
   );

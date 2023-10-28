@@ -1,5 +1,3 @@
-// import TableRow from '../components/TableRow';
-import { useState } from 'react';
 // import TableSkeleton from '../components/TableSkeleton';
 // import { UserType } from '../lib/type/userType';
 import { Logo, TableRow } from '../../components';
@@ -7,8 +5,6 @@ import { gpsData } from '../../data/gpsData';
 import { transformDataWithUniqueId } from '../../lib/transformDataWithUniqueId';
 
 export function Dashboard() {
-  const [loading, setLoading] = useState<boolean>(true);
-
   return (
     <section className='bg-gray-50 dark:bg-gray-900'>
       <div className='flex flex-col items-center px-6 py-10 mx-auto md:min-h-screen lg:py-10'>
