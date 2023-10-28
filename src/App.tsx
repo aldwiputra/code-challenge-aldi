@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { Dashboard, Login, NotFound, Register } from './pages';
+import { ProtectedLayout } from './pages/layouts';
 
 function App() {
   return (
@@ -7,7 +8,9 @@ function App() {
       <Routes>
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
-        <Route path='/' element={<Dashboard />} />
+        <Route element={<ProtectedLayout />}>
+          <Route path='/' element={<Dashboard />} />
+        </Route>
         {/* <Route element={<PrivateLayout />}>
           <Route path='/add' element={<NewCategory />} />
           <Route path='/edit/:id' element={<EditCategory />} />
