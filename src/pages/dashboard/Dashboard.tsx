@@ -7,7 +7,9 @@ import { useLocation, useNavigate } from 'react-router-dom';
 export function Dashboard() {
   const { search } = useLocation();
   const navigate = useNavigate();
+
   const [page, setPage] = useState<number>(1);
+
   const totalShownEntries = 5;
   const dataWithUniqueId = transformDataWithUniqueId(gpsData);
   const paginatedData = dataWithUniqueId.slice(
@@ -17,10 +19,13 @@ export function Dashboard() {
 
   useEffect(() => {
     const query = new URLSearchParams(search).get('page');
+    const totalPage = Math.ceil(dataWithUniqueId.length / 5);
 
     if (!query) {
       navigate('/?page=1');
     } else {
+      if (+query > totalPage) navigate('/?page=2');
+      if (+query < 1) navigate('/?page=1');
       setPage(+query);
     }
   }, [search]);
