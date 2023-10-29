@@ -8,7 +8,8 @@ export function Dashboard() {
   const { search } = useLocation();
   const navigate = useNavigate();
 
-  const [page, setPage] = useState<number>(1);
+  const query = new URLSearchParams(search).get('page');
+  const page = query ? +query : 1;
   const [sortBy, setSortBy] = useState<keyof GpsData>('deviceId');
   const [searchString, setSearchString] = useState('');
 
@@ -31,7 +32,6 @@ export function Dashboard() {
   );
 
   useEffect(() => {
-    const query = new URLSearchParams(search).get('page');
     const totalPage = Math.ceil(gpsDataWithUniqueId.length / 5);
 
     if (!query) {
@@ -39,7 +39,6 @@ export function Dashboard() {
     } else {
       if (+query > totalPage) navigate('/?page=2');
       if (+query < 1) navigate('/?page=1');
-      setPage(+query);
     }
   }, [search]);
 

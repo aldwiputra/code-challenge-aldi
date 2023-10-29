@@ -12,7 +12,7 @@ export function TableRow({ data }: TableRowPropsType) {
   return (
     <tr
       onClick={() => {
-        navigate(`/${deviceId}`);
+        navigate(`/entries/${deviceId}`);
       }}
       className='bg-white border-b dark:bg-gray-800 dark:border-gray-700 cursor-pointer hover:bg-gray-50 dark:hover:bg-slate-700'>
       <td
@@ -33,7 +33,7 @@ export function TableRow({ data }: TableRowPropsType) {
         </span>
       </td>
       <td className='px-6 py-4 text-gray-900 dark:text-slate-300'>
-        {formatDate(timestamp)}{' '}
+        {formatDate(timestamp)}
         <span className='text-xs bg-green-500/20 ml-1.5 py-1 px-1.5 rounded-md text-gray-900 dark:text-slate-200'>
           {formatTime(timestamp)}
         </span>

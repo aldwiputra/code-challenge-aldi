@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { Dashboard, Login, NotFound, Register } from './pages';
+import { Dashboard, Detail, Login, NotFound, Register } from './pages';
 import { AuthLayout, ProtectedLayout } from './pages/layouts';
 
 function App() {
@@ -12,11 +12,8 @@ function App() {
         </Route>
         <Route element={<ProtectedLayout />}>
           <Route path='/' element={<Dashboard />} />
+          <Route path='/entries/:id' element={<Detail />} />
         </Route>
-        {/* <Route element={<PrivateLayout />}>
-          <Route path='/add' element={<NewCategory />} />
-          <Route path='/edit/:id' element={<EditCategory />} />
-        </Route> */}
         <Route path='*' element={<NotFound />} />
       </Routes>
     </>

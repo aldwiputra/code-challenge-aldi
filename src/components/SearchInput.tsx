@@ -1,5 +1,5 @@
 import { SetStateAction, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 type SearchInputProps = {
   setSearchString: React.Dispatch<SetStateAction<string>>;
@@ -8,6 +8,7 @@ type SearchInputProps = {
 export const SearchInput = ({ setSearchString }: SearchInputProps) => {
   const [search, setSearch] = useState('');
   const navigate = useNavigate();
+  const { search: searchParams } = useLocation();
 
   return (
     <form
@@ -16,7 +17,10 @@ export const SearchInput = ({ setSearchString }: SearchInputProps) => {
         e.preventDefault();
 
         setSearchString(search);
-        navigate('/?page=1');
+
+        const query = new URLSearchParams(searchParams).get('page');
+        console.log(query);
+        if (query && +query > 1) navigate('/?page=1');
       }}>
       <label
         htmlFor='default-search'

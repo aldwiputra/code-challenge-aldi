@@ -7,3 +7,5 @@ export * from './TableRow';
 export * from './Pagination';
 export * from './SortSelectInput';
 export * from './SearchInput';
+export * from './TextWithIcon';
+export * from './DeviceType';
