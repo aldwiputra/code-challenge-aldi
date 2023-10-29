@@ -17,10 +17,10 @@ export function TableRow({ data }: TableRowPropsType) {
       className='bg-white border-b dark:bg-gray-800 dark:border-gray-700 cursor-pointer hover:bg-gray-50 dark:hover:bg-slate-700'>
       <td
         scope='row'
-        className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
+        className='px-6 py-6 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
         {deviceId}
       </td>
-      <td className='px-6 py-4'>
+      <td className='px-6 py-6'>
         <span
           className={`text-sm font-medium mr-2 px-2.5 py-0.5 rounded ${
             deviceType === 'Aircraft'
@@ -32,10 +32,10 @@ export function TableRow({ data }: TableRowPropsType) {
           {deviceType}
         </span>
       </td>
-      <td className='px-6 py-4 text-gray-900 dark:text-slate-300'>
+      <td className='px-6 py-6 text-gray-900 dark:text-slate-300'>
         <FormattedTime time={timestamp} />
       </td>
-      <td className='px-6 py-4 text-center text-gray-900 dark:text-white'>{location}</td>
+      <td className='px-6 py-6 text-center text-gray-900 dark:text-white'>{location}</td>
     </tr>
   );
 }

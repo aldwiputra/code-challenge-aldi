@@ -56,7 +56,7 @@ export function Dashboard() {
               <thead className='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
                 <tr>
                   {Object.keys(gpsData[0]).map((key) => (
-                    <th scope='col' className='px-6 py-3'>
+                    <th scope='col' className='px-6 py-2'>
                       {keysData[key as keyof GpsData].name}
                     </th>
                   ))}

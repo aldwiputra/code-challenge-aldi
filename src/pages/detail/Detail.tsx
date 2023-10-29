@@ -1,8 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { gpsData } from '../../data/gpsData';
-import { formatDate, formatTime, getGpsDataById } from '../../lib';
-import { DeviceType, Logo, TextWithIcon } from '../../components';
-import { FormattedTime } from '../../components/FormattedTime';
+import { getGpsDataById } from '../../lib';
+import { DeviceType, Logo, TextWithIcon, TimestampTable } from '../../components';
 
 export const Detail = () => {
   const { id } = useParams();
@@ -12,7 +11,7 @@ export const Detail = () => {
     <section className='bg-gray-50 dark:bg-gray-900'>
       <div className='flex flex-col items-center px-6 py-10 mx-auto md:max-w-5xl md:min-h-screen lg:py-10'>
         <Logo />
-        <div className='w-full mt-20 block max-w-md p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700'>
+        <div className='w-full mt-16 block max-w-md p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700'>
           <h1 className='text-base font-medium text-white dark:text-slate-200 inline-flex items-center text-center  '>
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -60,26 +59,7 @@ export const Detail = () => {
             <DeviceType deviceType={data[0].deviceType} />
           </div>
 
-          <div className='relative overflow-x-auto shadow-md sm:rounded-lg mt-8 border border-slate-200/10'>
-            <table className='w-full text-sm text-left text-gray-500 dark:text-gray-400'>
-              <thead className='text-xs text-gray-700 text-center uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
-                <tr>
-                  <th scope='col' className='px-6 py-2'>
-                    Timestamp
-                  </th>
-                </tr>
-              </thead>
-              <tbody className='text-center'>
-                {data.map((entry) => (
-                  <tr className='border border-slate-200/10'>
-                    <td className='py-1 text-gray-900 dark:text-slate-300 flex justify-center'>
-                      <FormattedTime time={entry.timestamp} />
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <TimestampTable data={data} />
         </div>
       </div>
     </section>
