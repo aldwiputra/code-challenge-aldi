@@ -3,6 +3,7 @@ import { Logo, Pagination, SearchInput, SortSelectInput, TableRow } from '../../
 import { GpsData, gpsData, createSortStringFunc, keysData } from '../../data/gpsData';
 import { transformDataWithUniqueId } from '../../lib';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { LogoutButton } from '../../components/LogoutButton';
 
 export function Dashboard() {
   const { search } = useLocation();
@@ -72,6 +73,7 @@ export function Dashboard() {
           <Pagination className='mt-8 text-center' data={filteredData} />
         </div>
       </div>
+      <LogoutButton />
     </section>
   );
 }
