@@ -2,14 +2,14 @@ import { GpsData } from '../data/gpsData';
 
 type DeviceDataType = Record<string, number>;
 
-export const createDeviceTypeData = (data: GpsData[]) => {
+export const createDeviceTypeData = (data: GpsData[], key: keyof GpsData) => {
   const deviceData: DeviceDataType = {};
 
   data.forEach((element) => {
-    if (deviceData[element.deviceType]) {
-      deviceData[element.deviceType]++;
+    if (deviceData[element[key]]) {
+      deviceData[element[key]]++;
     } else {
-      deviceData[element.deviceType] = 1;
+      deviceData[element[key]] = 1;
     }
   });
 

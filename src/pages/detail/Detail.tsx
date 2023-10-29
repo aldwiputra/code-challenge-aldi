@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom';
 import { gpsData } from '../../data/gpsData';
 import { getGpsDataById } from '../../lib';
 import { DeviceType, Logo, TextWithIcon, TimestampTable } from '../../components';
+import { PieChart } from '../../components/PieChart';
 
 export const Detail = () => {
   const { id } = useParams();
@@ -76,6 +77,7 @@ export const Detail = () => {
           </div>
 
           <TimestampTable data={data} />
+          <PieChart data={data} />
         </div>
       </div>
     </section>
