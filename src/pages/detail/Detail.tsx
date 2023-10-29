@@ -12,7 +12,7 @@ export const Detail = () => {
     <section className='bg-gray-50 dark:bg-gray-900'>
       <div className='flex flex-col items-center px-6 py-10 mx-auto md:max-w-5xl md:min-h-screen lg:py-10'>
         <Logo />
-        <div className='w-full max-w-md mt-10'>
+        <div className='w-full max-w-lg mt-10'>
           <Link
             to='/'
             className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xs px-4 py-2 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'>
@@ -28,7 +28,7 @@ export const Detail = () => {
             Back
           </Link>
         </div>
-        <div className='w-full mt-6 block max-w-md p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700'>
+        <div className='w-full mt-6 block max-w-lg p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700'>
           <h1 className='text-base font-medium text-white dark:text-slate-200 inline-flex items-center text-center  '>
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -45,7 +45,6 @@ export const Detail = () => {
             </svg>
             Record Details
           </h1>
-
           <p className='mt-3 text-sm max-w-[48ch] leading-relaxed text-gray-500 dark:text-gray-400'>
             This is the page for gps records with ID: <strong>{id}</strong>. To see more, click this{' '}
             <a
@@ -55,7 +54,6 @@ export const Detail = () => {
             </a>
             . You can thank me later.
           </p>
-
           <div className='flex justify-between items-center mt-6'>
             <TextWithIcon text={id as string}>
               <svg
@@ -75,7 +73,6 @@ export const Detail = () => {
 
             <DeviceType deviceType={data[0].deviceType} />
           </div>
-
           <TimestampTable data={data} />
           <PieChart data={data} />
         </div>

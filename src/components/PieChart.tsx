@@ -62,7 +62,7 @@ export const PieChart = ({ data }: { data: GpsData[] }) => {
           </svg>
         </TextWithIcon>
       </div>
-      <Pie data={chartData} />;
+      <Pie data={chartData} />
     </div>
   );
 };
