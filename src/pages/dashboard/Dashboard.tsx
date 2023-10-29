@@ -54,7 +54,7 @@ export function Dashboard() {
     <section className='bg-gray-50 dark:bg-gray-900'>
       <div className='flex flex-col items-center px-6 py-10 mx-auto min-h-screen lg:py-10'>
         <Logo />
-        <div className='flex-col md:flex justify-between md:items-center w-full mt-10 md:max-w-5xl'>
+        <div className='flex flex-col md:flex-row justify-between md:items-center w-full mt-10 md:max-w-5xl'>
           <SortSelectInput sortBy={sortBy} setSortBy={setSortBy} />
           <SearchInput setSearchString={setSearchString} />
         </div>
