@@ -10,7 +10,7 @@ export const Detail = () => {
 
   return (
     <section className='bg-gray-50 dark:bg-gray-900'>
-      <div className='flex flex-col items-center px-6 py-10 mx-auto md:max-w-5xl md:min-h-screen lg:py-10'>
+      <div className='flex flex-col items-center px-6 py-10 mx-auto md:max-w-5xl min-h-screen lg:py-10'>
         <Logo />
         <div className='w-full max-w-lg mt-10'>
           <Link

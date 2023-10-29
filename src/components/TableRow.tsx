@@ -32,7 +32,7 @@ export function TableRow({ data }: TableRowPropsType) {
           {deviceType}
         </span>
       </td>
-      <td className='px-6 py-6 text-gray-900 dark:text-slate-300'>
+      <td className='px-6 py-6 text-gray-900 whitespace-nowrap dark:text-slate-300'>
         <FormattedTime time={timestamp} />
       </td>
       <td className='px-6 py-6 text-center text-gray-900 dark:text-white'>{location}</td>

@@ -12,7 +12,7 @@ export const SearchInput = ({ setSearchString }: SearchInputProps) => {
 
   return (
     <form
-      className='w-80 ml-6'
+      className='md:w-80 md:ml-6 mt-6 md:mt-0'
       onSubmit={(e) => {
         e.preventDefault();
 
