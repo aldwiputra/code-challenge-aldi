@@ -1,27 +1,46 @@
-# React + TypeScript + Vite
+# GPS Record App (Moovd Code Challenge)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![banner](/public/banner.png)
 
-Currently, two official plugins are available:
+This repository contains the code for the gps records app named GPSCord. The project is a React application built with Vite and managed with npm.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Try App
 
-## Expanding the ESLint configuration
+To try the deployed app you access it here: [https://gpscord.vercel.app/](https://gpscord.vercel.app/)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Installation
 
-- Configure the top-level `parserOptions` property like this:
+To get started with the project, follow the steps below:
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+### Prerequisites
+
+Make sure you have the following tools installed on your machine:
+
+- Node.js (v14 or above)
+- npm (v7 or above)
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/aldwiputra/code-challenge-aldi.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Navigate to the Project Directory
+
+```bash
+cd code-challenge aldi
+```
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Start the Development Server
+
+```bash
+npm run dev
+```
+
+The development server will start, and you can access the application by visiting http://localhost:5173 in your browser.

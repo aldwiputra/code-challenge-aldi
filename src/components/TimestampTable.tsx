@@ -1,4 +1,3 @@
-import React from 'react';
 import { GpsData } from '../data/gpsData';
 import { FormattedTime } from './FormattedTime';
 
