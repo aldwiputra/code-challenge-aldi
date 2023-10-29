@@ -9,4 +9,5 @@ export * from './SortSelectInput';
 export * from './SearchInput';
 export * from './TextWithIcon';
 export * from './DeviceType';
+export * from './NotFound';
 export * from './TimestampTable';

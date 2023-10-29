@@ -1,5 +1,12 @@
 import { useEffect, useState } from 'react';
-import { Logo, Pagination, SearchInput, SortSelectInput, TableRow } from '../../components';
+import {
+  Logo,
+  NotFound,
+  Pagination,
+  SearchInput,
+  SortSelectInput,
+  TableRow,
+} from '../../components';
 import { GpsData, gpsData, createSortStringFunc, keysData } from '../../data/gpsData';
 import { transformDataWithUniqueId } from '../../lib';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -69,7 +76,9 @@ export function Dashboard() {
                 ))}
               </tbody>
             </table>
+            {filteredData.length === 0 && <NotFound text={searchString} />}
           </div>
+
           <Pagination className='mt-8 text-center' data={filteredData} />
         </div>
       </div>
