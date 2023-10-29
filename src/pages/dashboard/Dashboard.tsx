@@ -30,9 +30,11 @@ export function Dashboard() {
 
   const filteredData = gpsDataWithUniqueId.filter(
     (item) =>
-      item.deviceId.toLowerCase().includes(searchString.trim()) ||
-      item.deviceType.toLowerCase().includes(searchString.trim())
+      item.deviceId.toLowerCase().includes(searchString.toLowerCase().trim()) ||
+      item.deviceType.toLowerCase().includes(searchString.toLowerCase().trim())
   );
+
+  console.log();
 
   const paginatedData = filteredData.slice(
     totalShownEntries * (page - 1),
