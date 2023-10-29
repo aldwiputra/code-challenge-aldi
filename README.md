@@ -28,7 +28,7 @@ git clone https://github.com/aldwiputra/code-challenge-aldi.git
 ### Navigate to the Project Directory
 
 ```bash
-cd code-challenge aldi
+cd code-challenge-aldi
 ```
 
 ### Install Dependencies
