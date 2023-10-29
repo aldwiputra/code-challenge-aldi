@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { gpsData } from '../../data/gpsData';
 import { getGpsDataById } from '../../lib';
 import { DeviceType, Logo, TextWithIcon, TimestampTable } from '../../components';
@@ -11,7 +11,23 @@ export const Detail = () => {
     <section className='bg-gray-50 dark:bg-gray-900'>
       <div className='flex flex-col items-center px-6 py-10 mx-auto md:max-w-5xl md:min-h-screen lg:py-10'>
         <Logo />
-        <div className='w-full mt-16 block max-w-md p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700'>
+        <div className='w-full max-w-md mt-10'>
+          <Link
+            to='/'
+            className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xs px-4 py-2 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              fill='none'
+              viewBox='0 0 24 24'
+              strokeWidth={1.5}
+              stroke='currentColor'
+              className='w-5 h-5 mr-2'>
+              <path strokeLinecap='round' strokeLinejoin='round' d='M15.75 19.5L8.25 12l7.5-7.5' />
+            </svg>
+            Back
+          </Link>
+        </div>
+        <div className='w-full mt-6 block max-w-md p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700'>
           <h1 className='text-base font-medium text-white dark:text-slate-200 inline-flex items-center text-center  '>
             <svg
               xmlns='http://www.w3.org/2000/svg'

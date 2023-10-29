@@ -16,7 +16,7 @@ export const TimestampTable = ({ data }: { data: GpsData[] }) => {
         <tbody className='text-center'>
           {data.map((entry: GpsData) => (
             <tr className='border border-slate-200/10'>
-              <td className='py-4 text-gray-900 dark:text-slate-300 flex justify-center'>
+              <td className='py-4 text-gray-900 dark:text-slate-300 flex justify-center items-center'>
                 <FormattedTime time={entry.timestamp} />
               </td>
             </tr>
